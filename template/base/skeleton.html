@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<title>Regio Markt</title>
+
+<!-- stylesheets -->
+
+<link rel="stylesheet" href="{{ STATIC_URL }}css/import.css" type="text/css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/custom.css" type="text/css" />
+
+<!--[if lte IE 7]>
+  <link rel="stylesheet" href="yaml/core/iehacks.min.css" type="text/css" />
+<![endif]-->
+
+
+</head>
+
+<body>
+
+
+
+  <header>
+    <div class="ym-wrapper">
+      <div class="ym-wbox">
+
+        <h1>Regio Produkte</h1>
+      </div>
+    </div>
+  </header>
+  <nav id="nav">
+    <div class="ym-hlist">
+      <ul>
+        <li class="active"><strong>Active</strong></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+      </ul>
+      <form class="ym-searchform">
+        <input class="ym-searchfield" type="search" placeholder="Search..." /> <input class="ym-searchbutton" type="submit" value="Search" />
+      </form>
+    </div>
+  </nav>
+  <div id="main">
+    <div id="main">
+      <div class="ym-column linearize-level-1">
+        <div class="ym-col1">
+          <div class="ym-cbox">
+            <section class="box info">
+              <h2>Main Content</h2>
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+              <a class="ym-button ym-next" href="#">Read More</a>
+            </section>
+            <section class="ym-grid linearize-level-2">
+              <article class="ym-g50 ym-gl">
+                <div class="ym-gbox">
+                  <!-- content -->
+                  <h3>Heading</h3>
+                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+                    elitr.</p>
+                </div>
+              </article>
+              <article class="ym-g50 ym-gr">
+                <div class="ym-gbox">
+                  <!-- content -->
+                  <h3>Heading</h3>
+                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+                    elitr.</p>
+                </div>
+              </article>
+            </section>
+            <section class="ym-grid linearize-level-2">
+              <article class="ym-g50 ym-gl">
+                <div class="ym-gbox">
+                  <!-- content -->
+                  <h3>Heading</h3>
+                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+                    elitr.</p>
+                </div>
+              </article>
+              <article class="ym-g50 ym-gr">
+                <div class="ym-gbox">
+                  <!-- content -->
+                  <h3>Heading</h3>
+                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+                    elitr.</p>
+                </div>
+              </article>
+            </section>
+          </div>
+        </div>
+        <aside class="ym-col3">
+
+          {% block sidebar %}
+          <h1>This is the super template</h1>
+          {% endblock sidebar%}
+
+        </aside>
+      </div>
+    </div>
+    <footer>
+      <p>© Company 2012 &ndash; Layout based on <a href="http://www.yaml.de">YAML</a></p>
+    </footer>
+  </div>
+</body>
+</html>

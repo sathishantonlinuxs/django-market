@@ -1,0 +1,19 @@
+{% extends "base/skeleton.html" %}
+ 
+{% block sidebar %}
+
+<div class="ym-cbox">
+  <nav class="ym-vlist">
+    <h6 class="ym-vtitle">Optional Title</h6>
+    {% if categoryList %}
+    <ul>
+      {% for category in categoryList %}
+      <li><a href="/shop/category/{{ category.id }}/">{{ category.categoryName }}</a></li> {% endfor %}
+    </ul>
+    {% else %}
+    <p>No Categories are available</p>
+    {% endif %}
+
+  </nav>
+</div>
+{% endblock sidebar %}

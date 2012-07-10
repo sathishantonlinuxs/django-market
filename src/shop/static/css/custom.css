@@ -1,0 +1,16 @@
+body>header {
+	min-width: 760px;
+}
+
+h1 {
+	font-style:italic;
+}
+font-style:italic;
+
+.ym-wrapper {
+	max-width: 80em;
+}
+
+.ym-wbox {
+	padding: 10px;
+}
