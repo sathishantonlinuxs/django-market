@@ -14,3 +14,44 @@ font-style:italic;
 .ym-wbox {
 	padding: 10px;
 }
+
+.ym-icon-small {
+		display: inline-block;
+		white-space: nowrap;
+		background-color: #93BDDD;
+		background-image: -webkit-linear-gradient(top, #eee, #93BDDD);
+		background-image: -moz-linear-gradient(top, #eee, #93BDDD);
+		background-image: -ms-linear-gradient(top, #eee, #93BDDD);
+		background-image: -o-linear-gradient(top, #eee, #93BDDD);
+		background-image: linear-gradient(top, #eee, #93BDDD);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc');
+		border: 1px solid #777;
+		-webkit-border-radius: .2em;
+		-moz-border-radius: .2em;
+		border-radius: .2em;
+		-webkit-box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.15);
+		-moz-box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.15);
+		box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.15);
+		color: #333 !important;
+		cursor: pointer;
+		font: normal 0.7em/1.8em Arial, Helvetica;
+		margin: 0 0 0 0;
+		padding: 0 1em;
+		overflow: visible; /* removes extra side spacing in IE */
+		text-decoration: none !important;
+		text-shadow: 0 1px 0 rgba(255,255,255,.8);
+}
+
+.ym-buy:before { content: "\2042"; }
+.ym-add:before { content: "\2719"; }
+.ym-next:before { content: "\27A1"; }
+
+img {
+	
+	vertical-align: middle;
+}
+
+td.actionColumn {
+	width: 1%;
+	
+}

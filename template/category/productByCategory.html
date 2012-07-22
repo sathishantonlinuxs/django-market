@@ -1,0 +1,43 @@
+{% extends "category/categoryOverview.html" %} {% block main %}
+<section class="box info">
+
+  <table class="bordertable">
+  
+    <thead>
+      <tr>
+      <th>
+      Kurzbezeichnung
+      </th>
+      <th>
+      Produzent
+      </th>
+      
+      <th>
+      Preis/Stück
+      </th>
+      <th>
+      </th>
+      </tr>
+    </thead>
+  
+    {% for product in productList %}
+    <tr>
+
+      <td>{{ product.headline }}</td>
+      <td>{{ product.producer }}</td>
+      <td>{{ product.pricePerUnit }}</td>
+      <td class="actionColumn">
+        <button class="ym-icon-small">
+          <a href=""><img src="/static/icon/web0.2/16x16/Toolbar - Info.png" /></a>
+        </button>
+        <button class="ym-icon-small">
+          <a href=""><img src="/static/icon/web0.2/16x16/Basket.png" /></a>
+        </button>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+</section>
+{% endblock main %}

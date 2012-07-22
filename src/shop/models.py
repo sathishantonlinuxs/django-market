@@ -18,10 +18,14 @@ class Label(models.Model):
     
 class Category(models.Model):
     categoryName = models.CharField(max_length=25)
+    def __unicode__(self):
+        return self.categoryName
     
 class Producer(models.Model):
     address = models.ForeignKey(Address)
     shortName = models.CharField(max_length=70)
+    def __unicode__(self):
+        return self.shortName
     
 class Product(models.Model):
     producer = models.ForeignKey(Producer)
@@ -31,8 +35,11 @@ class Product(models.Model):
     quantityUnit = models.CharField(max_length=20)
     endurance = models.DecimalField(max_digits=5, decimal_places=1)
     active = models.BooleanField()
-    label = models.ManyToManyField(Label)
+    label = models.ManyToManyField(Label, null=True, blank=True)
     category = models.ManyToManyField(Category)
+    pricePerUnit = models.DecimalField(max_digits=5, decimal_places=2);
+    def __unicode__(self):
+        return self.headline
     
 class Image(models.Model):
     path = models.CharField(max_length=200)

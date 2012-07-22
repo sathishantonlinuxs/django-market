@@ -15,7 +15,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^$', 'shop.views.index'),
-    url(r'^category/\d+/$', 'shop.views.index'),
+    url(r'^category/(?P<id>\d+)/$', 'shop.views.getProductByCategory'),
     #url(r'^category/(?<poll_id>\d+)/$', 'detail'),
 )
 
