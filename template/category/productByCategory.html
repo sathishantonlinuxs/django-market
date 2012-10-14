@@ -27,16 +27,18 @@
       <td>{{ product.producer }}</td>
       <td>{{ product.pricePerUnit }}</td>
       <td class="actionColumn">
-        <button class="ym-icon-small">
-          <a href=""><img src="/static/icon/web0.2/16x16/Toolbar - Info.png" /></a>
-        </button>
-        <button class="ym-icon-small">
-          <a href=""><img src="/static/icon/web0.2/16x16/Basket.png" /></a>
-        </button>
+          <a class="ym-icon-small" href="/shop/product/{{ product.id }}/"><img src="/static/icon/web0.2/16x16/Toolbar - Info.png" /></a>
+          <o class="ym-icon-small" href="/shop/product/{{ product.id }}/"><img src="/static/icon/web0.2/16x16/Basket.png" /></a>
+
+ 
+        
+
+
       </td>
     </tr>
     {% endfor %}
   </table>
+  <a href="http://google.com">google</a>
 
 
 </section>

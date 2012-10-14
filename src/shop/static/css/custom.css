@@ -1,19 +1,81 @@
+
+
+body {
+	font-family: Tahoma,Verdana,Georgia,"Times New Roman",Times,serif;
+	font-size: 80%;
+}
+
 body>header {
 	min-width: 760px;
+	padding: 0em;
+}
+
+header h1 {
+	color: #cccccc;
 }
 
 h1 {
-	font-style:italic;
+	margin: 0.43em;
+	line-height: 1.2em;
 }
-font-style:italic;
+
+ym-equalize > [class*="ym-g"] {
+	margin: 10px;
+	}
+
+
+
+nav#nav {
+	
+}
+
+.ym-gbox {
+	margin: 5px;
+}
+
+.topRightInfoBox {
+	/*background-image: url('../icon/web0.2/48x48/Basket.png');*/
+	background-color: #fff;
+	color: #aaa;
+	font-size: 70%;
+	text-align: right;
+}
+
+.loginHeadline {
+	border-bottom: 2px solid;
+	border-color: #ccc;
+}
+
+.basketHeadline {
+	border-bottom: 1px dotted;
+}
+
+.ym-hlist {
+	border-bottom: 1px solid;
+	border-top: 1px solid;
+	border-color: #a3d222;
+	background-color: #fff;
+}
+
+.ym-hlist ul li a, .ym-hlist ul li strong, .ym-hlist ul li.active a:active, .ym-hlist ul li.active strong {
+	text-shadow: none;
+	color: #4D87C7;
+}
+
+body {
+	
+}
+
+header {
+	background: #fff;
+}
+
 
 .ym-wrapper {
 	max-width: 80em;
 }
 
-.ym-wbox {
-	padding: 10px;
-}
+
 
 .ym-icon-small {
 		display: inline-block;
@@ -40,6 +102,8 @@ font-style:italic;
 		overflow: visible; /* removes extra side spacing in IE */
 		text-decoration: none !important;
 		text-shadow: 0 1px 0 rgba(255,255,255,.8);
+		padding-left: 0.2em;
+    	padding-right: 0.2em;
 }
 
 .ym-buy:before { content: "\2042"; }
@@ -51,7 +115,16 @@ img {
 	vertical-align: middle;
 }
 
+td {
+	width: auto;
+}
+
 td.actionColumn {
 	width: 1%;
-	
+	white-space: nowrap;
+	text-align: right;
+}
+
+.info {
+	background: #ffffff;
 }

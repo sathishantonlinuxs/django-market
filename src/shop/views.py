@@ -3,6 +3,7 @@ from django.template import loader
 from django.template.context import RequestContext
 from shop.models import Category, Product
 from django.views.generic.list import ListView
+from cart import Cart
 
 def getTemplateDictionary():
     categoryList = Category.objects.all();
@@ -40,4 +41,10 @@ def getProductByCategory(request, id):
     dictMap = {"productList" : productList}
     context = RequestContext(request, dict(dictMap.items() + getTemplateDictionary().items()))
     return HttpResponse(template.render(context))
+
+def addToCard(request, productId, quantity):
+    product = Product.objects.get(id=productId)
+    cart = Cart(request)
+    cart.add(product, product.unit_price, quantity)
+    
     

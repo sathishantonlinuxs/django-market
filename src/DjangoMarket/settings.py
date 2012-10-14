@@ -123,6 +123,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'shop',
     'django.contrib.admin',
+    'south',
+    'cart',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
