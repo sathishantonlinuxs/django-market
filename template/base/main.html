@@ -1,0 +1,29 @@
+{% extends "base/appView.html" %}
+
+{% block main %}
+
+  <div class="centerWrapper">
+
+
+    {% for product in productList %}
+      <div class="productCard">
+        <img class="scale" src="/static/image/logoNuls_bw.png"/>
+
+        <div class="cardHeadline">
+          {{ product.headline }}
+        </div>
+        <div class="cardDescription">
+          {{ product.description }}
+        </div>
+        <div class="productCardFooter"></div>
+      </div>
+
+    {% endfor %}
+
+
+  </div>
+
+
+
+
+{% endblock main %}

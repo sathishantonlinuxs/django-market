@@ -6,17 +6,18 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'DjangoMarket.views.home', name='home'),
-    # url(r'^DjangoMarket/', include('DjangoMarket.foo.urls')),
+  # Examples:
+  # url(r'^$', 'DjangoMarket.views.home', name='home'),
+  # url(r'^DjangoMarket/', include('DjangoMarket.foo.urls')),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+  # Uncomment the admin/doc line below to enable admin documentation:
+  # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
-    # Uncomment the next line to enable the admin:
-    url(r'^$', 'shop.views.index'),
-    url(r'^category/(?P<id>\d+)/$', 'shop.views.getProductByCategory'),
-    #url(r'^category/(?<poll_id>\d+)/$', 'detail'),
+  # Uncomment the next line to enable the admin:
+  url(r'^$', 'shop.views.index'),
+  url(r'^category/(?P<id>\d+)/$', 'shop.views.getProductByCategory'),
+  url(r'^product/(?P<product_id>\d+)/toBasket/$', 'shop.views.addToCard'),
+  #url(r'^category/(?<poll_id>\d+)/$', 'detail'),
 )
 
 urlpatterns += staticfiles_urlpatterns()

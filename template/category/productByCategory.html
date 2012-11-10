@@ -1,45 +1,59 @@
 {% extends "category/categoryOverview.html" %} {% block main %}
-<section class="box info">
+  <section class="box info">
 
-  <table class="bordertable">
-  
-    <thead>
-      <tr>
-      <th>
-      Kurzbezeichnung
-      </th>
-      <th>
-      Produzent
-      </th>
-      
-      <th>
-      Preis/Stück
-      </th>
-      <th>
-      </th>
-      </tr>
-    </thead>
-  
-    {% for product in productList %}
-    <tr>
+    <form class="ym-form" action="/Product/{{ Prodcut.id }}/vote/" method="post">
 
-      <td>{{ product.headline }}</td>
-      <td>{{ product.producer }}</td>
-      <td>{{ product.pricePerUnit }}</td>
-      <td class="actionColumn">
-          <a class="ym-icon-small" href="/shop/product/{{ product.id }}/"><img src="/static/icon/web0.2/16x16/Toolbar - Info.png" /></a>
-          <o class="ym-icon-small" href="/shop/product/{{ product.id }}/"><img src="/static/icon/web0.2/16x16/Basket.png" /></a>
+      <div class="productCard">
+        <img class="scale" src="/static/image/logoNuls_bw.png" />
 
- 
-        
+      </div>
+    <div class="productCardFooter"></div>
 
 
-      </td>
-    </tr>
-    {% endfor %}
-  </table>
-  <a href="http://google.com">google</a>
+      <table class="bordertable">
+
+        <thead>
+        <tr>
+          <th>
+            Kurzbezeichnung
+          </th>
+          <th>
+            Produzent
+          </th>
+
+          <th>
+            Preis/Stück
+          </th>
+          <th>
+            Menge
+          </th>
+          <th>
+          </th>
+        </tr>
+        </thead>
+
+        {% for product in productList %}
+          <tr>
+
+            <td>{{ product.headline }}</td>
+            <td>{{ product.producer }}</td>
+            <td>{{ product.pricePerUnit }}</td>
+            <td><input type="text" name="amount" id="{{ product.id }}" value="1"/>
+            </td>
+            <td class="actionColumn">
+              <a class="ym-icon-small" href="/shop/product/{{ product.id }}/"><img
+                  src="/static/icon/web0.2/16x16/Toolbar - Info.png"/></a>
+              <a class="ym-icon-small" href="/shop/product/{{ product.id }}/toBasket"><img
+                  src="/static/icon/web0.2/16x16/Basket.png"/></a>
 
 
-</section>
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    </form>
+    <a href="http://google.com">google</a>
+
+
+  </section>
 {% endblock main %}

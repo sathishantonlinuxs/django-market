@@ -1,130 +1,263 @@
-
-
 body {
-	font-family: Tahoma,Verdana,Georgia,"Times New Roman",Times,serif;
-	font-size: 80%;
+    font-family: Helvetica, Verdana, Tahoma, Georgia, "Times New Roman", Times, serif;
+    font-size: 80%;
 }
 
 body>header {
-	min-width: 760px;
-	padding: 0em;
+    min-width: 760px;
+    padding: 0;
 }
 
-header h1 {
-	color: #cccccc;
+
+
+header h6 {
+    margin-left: 2em;
+    font-style: italic;
+
 }
+
+img.logo {
+    width: 220px;
+    margin-bottom: 1em;
+    padding-left: 3em;
+    padding-top: 1em;
+    margin-left: 4em;
+    display: block;
+}
+
 
 h1 {
-	margin: 0.43em;
-	line-height: 1.2em;
+    margin: 0.43em;
+    line-height: 1.2em;
+    font-size: 1.2em;
+    color: #316631;
+    margin-bottom: 10px;
 }
 
 ym-equalize > [class*="ym-g"] {
-	margin: 10px;
-	}
-
-
-
-nav#nav {
-	
+    margin: 10px;
 }
 
-.ym-gbox {
-	margin: 5px;
+nav#nav {
+
 }
 
 .topRightInfoBox {
-	/*background-image: url('../icon/web0.2/48x48/Basket.png');*/
-	background-color: #fff;
-	color: #aaa;
-	font-size: 70%;
-	text-align: right;
+    /*background-image: url('../icon/web0.2/48x48/Basket.png');*/
+    background-color: #fff;
+    color: #aaa;
+    font-size: 70%;
+    text-align: right;
 }
 
 .loginHeadline {
-	border-bottom: 2px solid;
-	border-color: #ccc;
+    border-bottom: 2px solid;
+    border-color: #ccc;
 }
 
 .basketHeadline {
-	border-bottom: 1px dotted;
-}
-
-.ym-hlist {
-	border-bottom: 1px solid;
-	border-top: 1px solid;
-	border-color: #a3d222;
-	background-color: #fff;
-}
-
-.ym-hlist ul li a, .ym-hlist ul li strong, .ym-hlist ul li.active a:active, .ym-hlist ul li.active strong {
-	text-shadow: none;
-	color: #4D87C7;
+    border-bottom: 1px dotted;
 }
 
 body {
-	
+
 }
 
 header {
-	background: #fff;
+    background: #fff;
 }
-
 
 .ym-wrapper {
-	max-width: 80em;
+    max-width: 80em;
 }
-
-
 
 .ym-icon-small {
-		display: inline-block;
-		white-space: nowrap;
-		background-color: #93BDDD;
-		background-image: -webkit-linear-gradient(top, #eee, #93BDDD);
-		background-image: -moz-linear-gradient(top, #eee, #93BDDD);
-		background-image: -ms-linear-gradient(top, #eee, #93BDDD);
-		background-image: -o-linear-gradient(top, #eee, #93BDDD);
-		background-image: linear-gradient(top, #eee, #93BDDD);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc');
-		border: 1px solid #777;
-		-webkit-border-radius: .2em;
-		-moz-border-radius: .2em;
-		border-radius: .2em;
-		-webkit-box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.15);
-		-moz-box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.15);
-		box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.15);
-		color: #333 !important;
-		cursor: pointer;
-		font: normal 0.7em/1.8em Arial, Helvetica;
-		margin: 0 0 0 0;
-		padding: 0 1em;
-		overflow: visible; /* removes extra side spacing in IE */
-		text-decoration: none !important;
-		text-shadow: 0 1px 0 rgba(255,255,255,.8);
-		padding-left: 0.2em;
-    	padding-right: 0.2em;
+    display: inline-block;
+    white-space: nowrap;
+    background-color: #93BDDD;
+    background-image: -webkit-linear-gradient(top, #eee, #93BDDD);
+    background-image: -moz-linear-gradient(top, #eee, #93BDDD);
+    background-image: -ms-linear-gradient(top, #eee, #93BDDD);
+    background-image: -o-linear-gradient(top, #eee, #93BDDD);
+    background-image: linear-gradient(top, #eee, #93BDDD);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#eeeeee', EndColorStr = '#cccccc');
+    border: 1px solid #777;
+    -webkit-border-radius: .2em;
+    -moz-border-radius: .2em;
+    border-radius: .2em;
+    -webkit-box-shadow: 0 0 1px 1px rgba(255, 255, 255, .8) inset, 0 1px 0 rgba(0, 0, 0, .15);
+    -moz-box-shadow: 0 0 1px 1px rgba(255, 255, 255, .8) inset, 0 1px 0 rgba(0, 0, 0, .15);
+    box-shadow: 0 0 1px 1px rgba(255, 255, 255, .8) inset, 0 1px 0 rgba(0, 0, 0, .15);
+    color: #333 !important;
+    cursor: pointer;
+    font: normal 0.7em/1.8em Arial, Helvetica;
+    margin: 0 0 0 0;
+    padding: 0 1em;
+    overflow: visible; /* removes extra side spacing in IE */
+    text-decoration: none !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
+    padding-left: 0.2em;
+    padding-right: 0.2em;
 }
 
-.ym-buy:before { content: "\2042"; }
-.ym-add:before { content: "\2719"; }
-.ym-next:before { content: "\27A1"; }
+.ym-buy:before {
+    content: "\2042";
+}
 
-img {
-	
-	vertical-align: middle;
+.ym-add:before {
+    content: "\2719";
+}
+
+.ym-next:before {
+    content: "\27A1";
 }
 
 td {
-	width: auto;
+    width: auto;
 }
 
 td.actionColumn {
-	width: 1%;
-	white-space: nowrap;
-	text-align: right;
+    width: 1%;
+    white-space: nowrap;
+    text-align: right;
 }
 
-.info {
-	background: #ffffff;
+div.productCard {
+    width: 240px;
+    height: 360px;
+    border: 1px solid #cccc88;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    display: inline-block;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+
+div.productCardFooter {
+    background-color: #cccc88;
+    border: 1px solid #bbbbbb;
+    height: 60px;
+
+}
+
+div.cardHeadline {
+    font-family: Tahoma;
+    font-size: 1.4em;
+    font-weight: 400;
+    overflow: hidden;
+    height: 30px;
+}
+
+div.cardDescription {
+    font-family: Georgia;
+    font-size: 1.0em;
+    line-height: 1.4em;
+    height: 96px;
+    display: block;
+    overflow: hidden;
+    padding: 0 10px;
+    text-align: left;
+}
+
+img.scale {
+    width: 202px;
+    background-color: #4D87C7;
+}
+
+
+.centerWrapper {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* horizontal list */
+.ym-hlist {
+    text-shadow: none;
+    background-color: #fff;
+    border-bottom: 1px solid;
+    border-top: 2px solid;
+    border-color: #eee;
+}
+
+.ym-hlist ul {
+    padding: 0px;
+    margin-left: 2em;
+
+}
+
+.ym-hlist ul li {
+    background-color: #fff;
+    margin-right: 0px;
+    border-right: 1px solid #aaa;
+}
+
+.ym-hlist ul li:first-child {
+    border-left: 1px solid #aaa;
+}
+
+.ym-hlist ul li a {
+    text-shadow: none;
+    padding: 1.2em 1.0em;
+    font-weight: 500;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.listHead {
+    height: 5px;
+    border-bottom: 2px solid #fff;
+}
+
+.ym-hlist ul li a:focus, .ym-hlist ul li a:hover, .ym-hlist ul li a:active {
+    background-color: #8b4513;
+    background: rgba(138, 69, 19, 0.75);
+    color: #fff;
+
+}
+
+.ym-hlist ul li a.toggleAnimal:focus, .ym-hlist ul li a.toggleAnimal:hover, .ym-hlist ul li a.toggleAnimal:active {
+    background-color: #8b4513;
+    background: rgba(138, 69, 19, 0.75);
+    border-radius: 0px;
+    color: #fff;
+}
+
+.fruitColor {
+    background-color: #ffcd3f;
+}
+
+.ym-hlist ul li a.toggleFruit:focus, .ym-hlist ul li a.toggleFruit:hover, .ym-hlist ul li a.toggleFruit:active {
+    background: rgba(255, 205, 63, 0.6);
+    border-radius: 0px;
+    color: #444;
+}
+
+.vegetableColor {
+    background-color: #006400;
+}
+
+.ym-hlist ul li a.toggleVegetable:focus, .ym-hlist ul li a.toggleVegetable:hover, .ym-hlist ul li a.toggleVegetable:active {
+    background: rgba(0, 100, 0, 0.6);
+    border-radius: 0px;
+    color: #444;
+}
+
+.animalColor {
+    background-color: #8b4513;
+}
+
+.ym-hlist ul li a.toggleAnimal:focus, .ym-hlist ul li a.toggleAnimal:hover, .ym-hlist ul li a.toggleAnimal:active {
+    background: rgba(139, 69, 19, 0.6);
+    border-radius: 0px;
+    color: #444;
+}
+
+.glasColor {
+    background-color: #cccc88;
+}
+
+.ym-hlist ul li a.toggleGlas:focus, .ym-hlist ul li a.toggleGlas:hover, .ym-hlist ul li a.toggleGlas:active {
+    background: rgba(204, 204, 136, 0.6);
+    border-radius: 0px;
+    color: #444;
 }
