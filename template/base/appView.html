@@ -17,7 +17,7 @@
       {% if categoryList %}
         <ul>
           {% for category in categoryList %}
-            <li><a href="/shop/category/{{ category.id }}/">{{ category.categoryName }}</a></li>
+            <li><a href="/shop/category/{{ category.id }}/">{{ category.categoryName }} ({{ category.numProduct }})</a></li>
           {% endfor %}
         </ul>
       {% else %}

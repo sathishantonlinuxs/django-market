@@ -12,7 +12,7 @@
 
   <!--[if lte IE 7]>
   <link rel="stylesheet" href="yaml/core/iehacks.min.css" type="text/css" />
-<![endif]-->
+  <![endif]-->
 
 
 </head>
@@ -27,12 +27,6 @@
           <img class="logo" src="/static/image/birnbub_logo_full_220px.png" />
           <h6>Waldenburger Frische direkt vor's Haus</h6>
         </div>
-
-
-
-
-
-
       </div>
     </div>
     <div class="ym-col3 topRightInfoBox">
@@ -89,13 +83,22 @@
               </div>
                -->
     </div>
-
   </div>
 
 </header>
 <nav id="nav">
   <div class="ym-hlist">
     <ul>
+
+      {% for division in divisionList %}
+        <li>
+          <div class="listHead {{  division.name }}DivisionColor">
+          </div>
+          <div class="listEntry">
+            <a class="toggleFruit" href="#">Früchte</a>
+          </div>
+        </li>
+      {% endfor %}
       <li>
         <div class="listHead fruitColor">
         </div>
@@ -127,8 +130,8 @@
       </li>
     </ul>
     <form class="ym-searchform">
-      <input class="ym-searchfield" type="search" placeholder="Search..."/> <input class="ym-searchbutton" type="submit"
-                                                                                   value="Search"/>
+      <input class="ym-searchfield" type="search" placeholder="Search..."/>
+      <input class="ym-searchbutton" type="submit" value="Search"/>
     </form>
   </div>
 </nav>
