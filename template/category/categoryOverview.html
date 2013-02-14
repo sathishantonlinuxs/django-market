@@ -1,17 +1,17 @@
 {% extends "base/appView.html" %}
 
 {% block main %}
-<section class="box info">
+  <section class="box info">
 
-<table>
-    {% for category in categoryList %}
+    <table>
+      {% for category in categoryList %}
         <tr>
-        
-        <td>{{ category.categoryName }}</td>
+
+          <td>{{ category.categoryName }}</td>
         </tr>
-    {% endfor %}
+      {% endfor %}
     </table>
 
 
-</section>
+  </section>
 {% endblock main %}

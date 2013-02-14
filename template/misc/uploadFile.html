@@ -1,28 +1,31 @@
-
 {% extends "base/appView.html" %}
 
 {% block main %}
 
-  {% if documents %}
+  {% if images %}
     <ul>
-      {% for document in documents %}
-        <li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
+      {% for image in images %}
+        <li><a href="{{ image.imageFile.url }}">{{ image.imageFile.name }}</a></li>
+
       {% endfor %}
     </ul>
   {% else %}
-    <p>No documents.</p>
+    <p>Keine Bilder vorhanden.</p>
   {% endif %}
 
   <!-- Upload form. Note enctype attribute! -->
-  <form action="{% url list %}" method="post" enctype="multipart/form-data">
+  <form action="{% url upload %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <p>{{ form.non_field_errors }}</p>
-    <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+
+    <p>{{ form.imageFile.label_tag }} {{ form.imageFile.help_text }}</p>
+
     <p>
-      {{ form.docfile.errors }}
-      {{ form.docfile }}
+      {{ form.imageFile.errors }}
+      {{ form.imageFile }}
     </p>
-    <p><input type="submit" value="Upload" /></p>
+
+    <p><input type="submit" value="Upload"/></p>
   </form>
 
 {% endblock main %}

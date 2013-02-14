@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf import settings
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
@@ -17,8 +18,10 @@ urlpatterns = patterns('shop.views',
   url(r'^$', 'index'),
   url(r'^category/(?P<id>\d+)/$', 'getProductByCategory'),
   url(r'^product/(?P<product_id>\d+)/toBasket/$', 'addToCard'),
-  url(r'^upload/$', 'upload'),
-  url(r'^list/$', 'list', name='list'),
+  # the last string is the reverse match
+  url(r'^upload/$', 'upload', name='upload'),
+
+
   #url(r'^category/(?<poll_id>\d+)/$', 'detail'),
 )
 

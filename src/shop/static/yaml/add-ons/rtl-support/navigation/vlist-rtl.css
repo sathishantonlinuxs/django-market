@@ -18,44 +18,49 @@
 
 @media all {
 
-	/* menu title */
-	h6.ym-vlist {
-		padding-left: 0px;
-		padding-right: 10%;
-	}
+    /* menu title */
+    h6.ym-vlist {
+        padding-left: 0px;
+        padding-right: 10%;
+    }
 
-	.ym-vlist { text-align: right; }
-	.ym-vlist li { float:right; }
+    .ym-vlist {
+        text-align: right;
+    }
 
-	/* Level 1 */
-	.ym-vlist a,
-	.ym-vlist strong,
-	.ym-vlist span {
-		padding-left: 0px;
-		padding-right: 10%;
-	}
+    .ym-vlist li {
+        float: right;
+    }
 
-	/* Level 2 */
-	.ym-vlist li ul li a,
-	.ym-vlist li ul li strong,
-	.ym-vlist li ul li span {
-		padding-left: 0px;
-		padding-right: 20%;
-	}
+    /* Level 1 */
+    .ym-vlist a,
+    .ym-vlist strong,
+    .ym-vlist span {
+        padding-left: 0px;
+        padding-right: 10%;
+    }
 
-	/* Level 3 */
-	.ym-vlist li ul li ul li a,
-	.ym-vlist li ul li ul li strong,
-	.ym-vlist li ul li ul li span {
-		padding-left: 0px;
-		padding-right: 30%;
-	}
+    /* Level 2 */
+    .ym-vlist li ul li a,
+    .ym-vlist li ul li strong,
+    .ym-vlist li ul li span {
+        padding-left: 0px;
+        padding-right: 20%;
+    }
 
-	/* Level 4 */
-	.ym-vlist li ul li ul li ul li a,
-	.ym-vlist li ul li ul li ul li strong,
-	.ym-vlist li ul li ul li ul li span {
-		padding-left: 0px;
-		padding-right: 40%;
-	}
+    /* Level 3 */
+    .ym-vlist li ul li ul li a,
+    .ym-vlist li ul li ul li strong,
+    .ym-vlist li ul li ul li span {
+        padding-left: 0px;
+        padding-right: 30%;
+    }
+
+    /* Level 4 */
+    .ym-vlist li ul li ul li ul li a,
+    .ym-vlist li ul li ul li ul li strong,
+    .ym-vlist li ul li ul li ul li span {
+        padding-left: 0px;
+        padding-right: 40%;
+    }
 }

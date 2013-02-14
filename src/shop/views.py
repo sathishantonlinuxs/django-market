@@ -3,12 +3,13 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import loader
 from django.template.context import RequestContext
-from models import Category, Product, Document
+from models import Category, Product, Image
 from django.views.generic.list import ListView
 from cart import Cart
 from django.db.models import Count
 import random
-from forms import DocumentForm
+from forms import ImageForm
+
 
 def getTemplateDictionary():
   categoryList = Category.objects.all();
@@ -23,6 +24,7 @@ def getDefaultMaps(dict):
   defaultDict = {'categoryList': categoryList, 'dbProductList': dbProductList}
   defaultDict.update(dict)
   return defaultDict
+
 
 def index(request):
   #categoryList = Category.objects.all();
@@ -72,35 +74,25 @@ def addToCard(request, product_id):
 
 
 def upload(request):
-  template = loader.get_template('misc/uploadFile.html')
-  return HttpResponse(template.render(RequestContext(request, getDefaultMaps())))
-
-
-
-
-def list(request):
   # Handle file upload
   if request.method == 'POST':
-    form = DocumentForm(request.POST, request.FILES)
+    form = ImageForm(request.POST, request.FILES)
     if form.is_valid():
-      newdoc = Document(docfile = request.FILES['docfile'])
-      newdoc.save()
+      image = Image(imageFile=request.FILES['imageFile'])
+      image.save()
 
       # Redirect to the document list after POST
-      return HttpResponseRedirect(reverse('shop.views.list'))
+      return HttpResponseRedirect(reverse('shop.views.upload'))
   else:
-    form = DocumentForm() # A empty, unbound form
+    form = ImageForm() # A empty, unbound form
 
   # Load documents for the list page
-  documents = Document.objects.all()
-
-  defaults = getDefaultMaps({'documents': documents, 'form1': form})
-  print defaults
+  images = Image.objects.all()
 
   # Render list page with the documents and the form
   return render_to_response(
     'misc/uploadFile.html',
-    getDefaultMaps({'documents': documents, 'form': form}),
+    getDefaultMaps({'images': images, 'form': form}),
     context_instance=RequestContext(request)
   )
     

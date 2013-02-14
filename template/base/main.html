@@ -7,7 +7,7 @@
 
     {% for product in productList %}
       <div class="productCard">
-        <img class="scale" src="/static/image/logoNuls_bw.png"/>
+        <img class="scale" src="/static/image/birne_icon_256.png"/>
 
         <div class="cardHeadline">
           {{ product.headline }}
@@ -15,7 +15,12 @@
         <div class="cardDescription">
           {{ product.description }}
         </div>
-        <div class="productCardFooter"></div>
+        <div class="productCardFooter">
+          <img class="cardAction" src="static/icon/web0.2/24x24/Toolbar - Info.png"/>
+          <img class="cardAction" src="static/icon/web0.2/24x24/Basket.png"/>
+
+          <div class=".ym-buy">skafj</div>
+        </div>
       </div>
 
     {% endfor %}
