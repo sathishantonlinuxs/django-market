@@ -1,12 +1,12 @@
+from cStringIO import StringIO
+import os
+
 from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.signals import post_save
-from django.db.models import Count
-from django.conf import settings
 from PIL import Image
-from cStringIO import StringIO
 from django.core.files.uploadedfile import SimpleUploadedFile
-import os
+from ImageConversion import Converter
 
 
 class Address(models.Model):
@@ -16,7 +16,7 @@ class Address(models.Model):
   zipCode = models.IntegerField()
   city = models.CharField(max_length=50)
   country = models.CharField(max_length=50)
-  email = models.EmailField();
+  email = models.EmailField()
 
 
 class Label(models.Model):
@@ -34,6 +34,8 @@ class Producer(models.Model):
   address = models.ForeignKey(Address)
   shortName = models.CharField(max_length=70)
 
+
+
   def __unicode__(self):
     return self.shortName
 
@@ -46,11 +48,11 @@ class Category(models.Model):
 
 
 class Image(models.Model):
-
   imageFile = models.ImageField(upload_to='files')
   imageCaption = models.CharField(max_length=255, blank=True, null=True)
   imageThumbnailFile = models.ImageField(upload_to='files', max_length=500, blank=True, null=True)
   imageThumbnailSquaredFile = models.ImageField(upload_to='files', max_length=500, blank=True, null=True)
+  imageThumbnailBWFile = models.ImageField(upload_to='files', max_length=500, blank=True, null=True)
 
   def image_img(self):
     if self.imageFile:
@@ -66,42 +68,43 @@ class Image(models.Model):
 
   def create_thumbnail(self):
     # Original code: http://snipt.net/danfreak/generate-thumbnails-in-django-with-pil/
-    if not self.image:
-      return
+    # And http://www.yilmazhuseyin.com/blog/dev/create-thumbnails-imagefield-django/
 
-    DJANGO_TYPE = self.imageFile.file.content_type
-
-    if DJANGO_TYPE == 'image/jpeg':
-      PIL_TYPE = 'jpeg'
-      FILE_EXTENSION = 'jpg'
-    elif DJANGO_TYPE == 'image/png':
-      PIL_TYPE = 'png'
-      FILE_EXTENSION = 'png'
-
-    # Open original photo which we want to thumbnail using PIL's Image
-    image = Image.open(StringIO(self.imageFile.read()))
-    # can be done: image = image.convert('RGB')
-    assert isinstance(image.thumbnail, Image)
-    # max height, max width
-    image.thumbnail((200,200), Image.ANTIALIAS)
+    converter = Converter(self.imageFile)
+    image = converter.reduceSize()
 
     # Save the thumbnail
     temp_handle = StringIO()
-    image.save(temp_handle, PIL_TYPE)
+    image.save(temp_handle, converter.PIL_TYPE)
     temp_handle.seek(0)
-
-    # Save image to a SimpleUploadedFile which can be saved into
-    # ImageField
-    suf = SimpleUploadedFile(os.path.split(self.image.name)[-1],
-      temp_handle.read(), content_type=DJANGO_TYPE)
+    suf = SimpleUploadedFile(os.path.split(self.imageFile.name)[-1],
+                             temp_handle.read(), content_type=converter.DJANGO_TYPE)
     # Save SimpleUploadedFile into image field
-    self.imageThumbnailFile.save('%s_thumbnail.%s' % (os.path.splitext(suf.name)[0], FILE_EXTENSION), suf, save=False)
+    self.imageThumbnailFile.save('%s_thumbnail.%s' % (os.path.splitext(suf.name)[0], converter.FILE_EXTENSION), suf, save=False)
+
+    temp_handle = StringIO()
+    squaredImage = converter.createCenteredSquare()
+    squaredImage.save(temp_handle, converter.PIL_TYPE)
+    temp_handle.seek(0)
+    suf = SimpleUploadedFile(os.path.split(self.imageFile.name)[-1],
+                             temp_handle.read(), content_type=converter.DJANGO_TYPE)
+    self.imageThumbnailSquaredFile.save('%s_thumbnail_squared.%s' % (os.path.splitext(suf.name)[0], converter.FILE_EXTENSION), suf, save=False)
+
+    bwImage = squaredImage.convert("L")
+    temp_handle = StringIO()
+
+    bwImage.save(temp_handle, converter.PIL_TYPE)
+    temp_handle.seek(0)
+    suf = SimpleUploadedFile(os.path.split(self.imageFile.name)[-1],
+                             temp_handle.read(), content_type=converter.DJANGO_TYPE)
+    self.imageThumbnailBWFile.save('%s_thumbnail_bw.%s' % (os.path.splitext(suf.name)[0], converter.FILE_EXTENSION), suf, save=False)
+
 
   def save(self):
-    # save the original first
-    super(Image, self).save()
-    # create and save the thumbnail
+    print "Invoked save on image"
     self.create_thumbnail()
+    super(Image, self).save()
+
 
 class Product(models.Model):
   producer = models.ForeignKey(Producer)
@@ -114,7 +117,7 @@ class Product(models.Model):
   label = models.ManyToManyField(Label, null=True, blank=True)
   category = models.ManyToManyField(Category)
   division = models.ForeignKey(Division, null=True)
-  pricePerUnit = models.DecimalField(max_digits=5, decimal_places=2);
+  pricePerUnit = models.DecimalField(max_digits=5, decimal_places=2)
   productImage = models.ForeignKey(Image, null=True)
 
 
@@ -130,6 +133,7 @@ class UserProfile(models.Model):
 def create_user_profile(sender, instance, created, **kwargs):
   if created:
     UserProfile.objects.create(user=instance)
+
 
 post_save.connect(create_user_profile, sender=User)
 

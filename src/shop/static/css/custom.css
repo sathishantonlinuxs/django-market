@@ -121,12 +121,13 @@ td.actionColumn {
 div.productCard {
     width: 200px;
     height: 360px;
-    border: 4px solid #cccc88;
+    border: 2px solid #cccc88;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
     /*padding: 5px;*/
     display: inline-block;
     margin-left: 40px;
     margin-top: 50px;
+    padding: 15px;
 }
 
 div.productCardFooter {
@@ -139,11 +140,15 @@ div.productCardFooter {
 }
 
 div.cardHeadline {
-    font-family: Tahoma;
+    font-family: Droid;
+    font-style: italic;
+    color: #eee;
+    border: 1px solid #555;
     font-size: 1.4em;
     font-weight: 400;
     overflow: hidden;
-    height: 30px;
+    padding: 10px;
+    background-color: #555;
 }
 
 div.cardDescription {
@@ -203,6 +208,19 @@ img.scale {
 .listHead {
     height: 5px;
     border-bottom: 2px solid #fff;
+}
+
+.linkGeneralHorizontal {
+    border: 1px solid #6eacc7;
+    border-top: 3px solid #000;
+    background-color: #6eacc7;
+    color: #fff;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+
+
+    float: left;
+    margin-right: 3px;
 }
 
 .ym-hlist ul li a:focus, .ym-hlist ul li a:hover, .ym-hlist ul li a:active {
